@@ -103,6 +103,7 @@ label {
     color: #B4B4B4;
     font-size: 0.75rem;
     display: block;
+    user-select: none;
     margin-bottom: 0.3125rem;
     margin-top: 1rem;
 }
@@ -172,14 +173,49 @@ a {
     background-color: #1b64c4;
 }
 
+.checkbox {
+    cursor: pointer;
+}
+
 .checkbox input {
     margin: 0;
     vertical-align: middle;
-    margin-right: 0.25rem;
+    cursor: pointer;
+    height: 0.875rem;
+    transition: box-shadow 0.2s ease-out;
+    margin-right: 0.4rem;
+    border-radius: 5px;
+    appearance: none;
+    margin-top: -1px; /* although this is ugly, this is the only way to get this to line up */
+}
+
+.checkbox input::before {
+    opacity: 1;
+    visibility: visible;
+    content: '';
+    width: 0.875rem;
+    height: 0.875rem;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 5px;
+    vertical-align: middle;
+    transition: background 0.1s ease-out;
+}
+
+.checkbox input:checked::before {
+    color: #fff;
+    content: '✓';
+    font-size: 0.6rem;
+    text-align: center;
+    background-color: #1E77EF;
 }
 
 .checkbox label {
+    cursor: pointer;
     margin: 0;
+    line-height: 0.875rem;
+    height: 0.875rem;
+    display: inline-block;
     vertical-align: middle;
     color: #fff;
 }

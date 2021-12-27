@@ -342,6 +342,10 @@ a:focus-visible {
 	margin-top: 2rem;
 }
 
+.hidden {
+	display: none;
+}
+
 @media screen and (max-width: 767px) {
 	.card-pf {
 		padding: 2rem;

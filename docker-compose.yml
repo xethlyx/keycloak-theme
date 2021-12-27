@@ -1,0 +1,13 @@
+version: "3.2"
+
+services:
+  keycloak:
+      image: jboss/keycloak:latest
+      volumes:
+        - .:/opt/jboss/keycloak/themes/local
+        - ./standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone-ha.xml
+      environment:
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: password
+      ports:
+        - 9000:8080
